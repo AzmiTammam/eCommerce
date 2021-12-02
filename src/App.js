@@ -9,6 +9,7 @@ class App extends Component {
       items: SHOP_DATA,
       cartItems: []
     }
+    
   }
   render() {
     return (
