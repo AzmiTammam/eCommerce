@@ -1,6 +1,7 @@
-import { Component } from "react";
-import "./App.css";
-import SHOP_DATA from "./shop.data";
+import { Component } from 'react';
+import './App.css'
+import SHOP_DATA from './shop.data';
+
 
 class App extends Component {
   constructor(props) {
@@ -8,12 +9,19 @@ class App extends Component {
 
     this.state = {
       items: SHOP_DATA,
-      cartItems: [],
-    };
+      cartItems: []
+    }
+    
   }
   render() {
-    return <div className="App"></div>;
+    
+    return (
+      <div className="App">
+
+      </div>
+    );
   }
 }
 
 export default App;
+
