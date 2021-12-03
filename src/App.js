@@ -1,25 +1,19 @@
-import { Component } from 'react';
-import './App.css'
-import SHOP_DATA from './shop.data';
+import { Component } from "react";
+import "./App.css";
+import SHOP_DATA from "./shop.data";
+
 class App extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
       items: SHOP_DATA,
-      cartItems: []
-    }
+      cartItems: [],
+    };
   }
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          Azmi
-        </header>
-      </div>
-    );
+    return <div className="App"></div>;
   }
-
 }
 
 export default App;
