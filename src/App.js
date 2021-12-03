@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import './App.css'
 import SHOP_DATA from './shop.data';
+
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -14,9 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          Azmi
-        </header>
+
       </div>
     );
   }
