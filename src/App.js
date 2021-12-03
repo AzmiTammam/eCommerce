@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import './App.css'
 import SHOP_DATA from './shop.data';
+import {Route, Switch,Redirect} from "react-router-dom"
+
 
 
 class App extends Component {
