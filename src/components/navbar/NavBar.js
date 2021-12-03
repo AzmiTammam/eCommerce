@@ -49,9 +49,6 @@ export default class NavBar extends Component {
               <a href="#about-section">About</a>
             </li>
             <li>
-              <Link to="register">REGISTER</Link>
-            </li>
-            <li>
               <Link to="login">SIGN IN</Link>
             </li>
           </ul>

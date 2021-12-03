@@ -31,9 +31,6 @@ class App extends Component {
           <Route exact path="/" >
             <HomePage items={this.state.items} currentUser={this.state.currentUser} />
           </Route>
-          <Route exact path="/register" >
-            <Register  />
-          </Route>
           <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/"  />) : (<Login  />) }  />
         </Switch>
         <Footer  />
