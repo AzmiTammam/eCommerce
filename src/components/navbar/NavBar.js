@@ -44,6 +44,9 @@ export default class NavBar extends Component {
               <a href="#">Pages</a>
             </li>
             <li>
+              <a href="#">About</a>
+            </li>
+            <li>
               <a href="#">REGISTER</a>
             </li>
             <li>
