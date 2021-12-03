@@ -3,7 +3,7 @@ import React from "react";
 import './style.css'
 
 
-function Login() {
+function Login({handleCurrentUser}) {
   const loginUsersFN = (e) => {
     e.preventDefault();
 
@@ -26,6 +26,7 @@ function Login() {
       alert('Weclome!')
 
       let logged = true;
+      handleCurrentUser(loginUserName, loginPassword)
     } else {
       alert('No user found')
     }

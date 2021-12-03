@@ -5,8 +5,7 @@ import {Route, Switch,Redirect} from "react-router-dom"
 import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/footer';
 import HomePage from './pages/home/homepage.component';
-import Register from './components/Sign/Register';
-import Login from './components/Sign/Login';
+import SignInPage from './pages/sign-in/sign-in.component';
 
 
 
@@ -18,10 +17,16 @@ class App extends Component {
       items: SHOP_DATA,
       cartItems: [],
       currentUser: null,
-
     }
-    
+
+   
   }
+
+  handleCurrentUser = (userName,password) => {
+    this.setState({currentUser: {username: userName, pass: password}})
+  }
+
+
   render() {
     
     return (
@@ -31,7 +36,7 @@ class App extends Component {
           <Route exact path="/" >
             <HomePage items={this.state.items} currentUser={this.state.currentUser} />
           </Route>
-          <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/"  />) : (<Login  />) }  />
+          <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/" />) : (<SignInPage  handleCurrentUser={this.handleCurrentUser} />) }  />
         </Switch>
         <Footer  />
       </div>
