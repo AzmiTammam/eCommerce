@@ -6,8 +6,8 @@ import {Route, Switch,Redirect} from "react-router-dom"
 
 
 class App extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
       items: SHOP_DATA,
@@ -23,7 +23,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 export default App;
