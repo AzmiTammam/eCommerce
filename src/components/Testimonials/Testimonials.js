@@ -3,7 +3,7 @@ import "./Testimonials.css";
 
 function Testimonials() {
   return (
-    <section className="testimonial-section pb-5">
+    <section className="testimonial-section pb-5" id="testimonials-section">
       <div
         id="carouselExampleIndicators"
         className="carousel slide"

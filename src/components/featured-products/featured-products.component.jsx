@@ -1,9 +1,9 @@
 import React from 'react'
 import "./featured-products.styles.css"
 
-const FeaturedProducts = ({item}) => {
+const FeaturedProducts = ({item,currentUser}) => {
     return (
-        <div className="card-container">
+        <div className="card-container" id="featured-products-section">
              <div className="featured-product-image" style={{
                backgroundImage: `url(${item.imageUrl})`
            }} />
@@ -13,7 +13,7 @@ const FeaturedProducts = ({item}) => {
            </div>
            <div className="desc-button">
            <span className="desc">{item.desc}</span>
-           <button type="button" className="add-to-cart-button">ADD TO CART</button>
+           {currentUser ? <button type="button" className="add-to-cart-button">ADD TO CART</button> : null}
            </div>
         </div>
     )

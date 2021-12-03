@@ -41,6 +41,7 @@ function Register() {
 
       registerUsersArray.push(users);
       localStorage.setItem("users", JSON.stringify(registerUsersArray));
+      
     }
   };
   return (

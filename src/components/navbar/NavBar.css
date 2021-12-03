@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0 15px;
 }
 .navLogo {
@@ -43,12 +43,29 @@
 }
 .header .shoppingCart {
   display: flex;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 .topIcon {
   font-size: 1.5rem;
   margin-right: 0.625rem;
   color: #444;
   cursor: pointer;
+}
+.shopping-icon{
+  width: 24px;
+    height: 24px;
+}
+.item-count {
+  position: absolute;
+  font-size: 10px;
+  font-weight: bold;
+  bottom: 12px;
 }
 
 @media screen and (max-width: 777px) {
@@ -59,7 +76,7 @@
   .header .burgerMenu {
     display: block;
     position: absolute;
-    top: 1.55rem;
+    top: 1.70rem;
     right: 0.9rem;
   }
   .nav {
@@ -69,7 +86,8 @@
   .topList {
     display: none;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
   }
   /*  .header .nav ul .active {
     display: block;
@@ -82,7 +100,7 @@
   }
   .header .shoppingCart {
     position: absolute;
-    top: 0.7rem;
+    top: 0.1rem;
     right: 3rem;
   }
 }

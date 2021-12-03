@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
+import {ReactComponent as ShoppingIcon} from "../../assets/shopping-bag.svg";
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -30,36 +32,34 @@ export default class NavBar extends Component {
           </div>
           <ul className="topList" id="navShow">
             <li>
-              <a className="active" href="#">
+              <Link className="active" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">Shop</a>
+              <Link to="/shop">Shop</Link>
             </li>
             <li>
-              <a href="#">Cups&Hats</a>
+              <a href="#featured-products-section">Featured Products</a>
             </li>
             <li>
-              <a href="#">Pages</a>
+              <a href="#testimonials-section">Testimonials</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#about-section">About</a>
             </li>
             <li>
-              <a href="#">REGISTER</a>
+              <Link to="register">REGISTER</Link>
             </li>
             <li>
-              <a href="#">SIGN IN</a>
+              <Link to="login">SIGN IN</Link>
             </li>
           </ul>
-          <div className="shoppingCart">
-            <ul>
-              <li>
-                <i className="topIcon fas fa-shopping-cart"></i>
-              </li>
-            </ul>
-          </div>
+          {this.props.currentUser ? <div className="shoppingCart">
+              <ShoppingIcon className="shopping-icon"/>
+              <span className="item-count">0</span>
+          </div> : null}
+          
         </div>
       </div>
     );

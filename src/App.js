@@ -26,15 +26,15 @@ class App extends Component {
     
     return (
       <div className="App">
-        <NavBar  />
+        <NavBar currentUser={this.state.currentUser} />
         <Switch>
           <Route exact path="/" >
-            <HomePage items={this.state.items}  />
+            <HomePage items={this.state.items} currentUser={this.state.currentUser} />
           </Route>
           <Route exact path="/register" >
             <Register  />
           </Route>
-          <Route exact path="/login" render={() => this.state.currentUser ?(<Redirect to="/"  />) : (<Login  />) }  />
+          <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/"  />) : (<Login  />) }  />
         </Switch>
         <Footer  />
       </div>

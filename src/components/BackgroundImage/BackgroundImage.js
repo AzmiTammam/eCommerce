@@ -1,6 +1,7 @@
 import React from "react";
 import "./BackgroundImage.css";
 import "bootstrap/dist/css/bootstrap.css";
+import {Link} from "react-router-dom"
 
 function BackgroundImage() {
   return (
@@ -11,7 +12,7 @@ function BackgroundImage() {
       >
         <span> Stylish & Trendy Hats!</span>
         <p>check out our collection now</p>
-        <button>Shop</button>
+        <Link to="/shop"><button>Shop</button></Link>
       </div>
     </div>
   );
