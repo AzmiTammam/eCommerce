@@ -11,7 +11,7 @@ function BackgroundImage() {
         style={{ backgroundImage: "url(./images/bg.jpg)" }}
       >
         <span> Stylish & Trendy Hats!</span>
-        <p>check out our collection now</p>
+        <p>Check out our collection now</p>
         <Link to="/shop"><button>Shop</button></Link>
       </div>
     </div>
