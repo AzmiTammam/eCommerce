@@ -66,9 +66,20 @@ function Register() {
     }
 
   };
+  function showPassword() {
+    let showPassword = document.getElementById("password1");
+    let showPassword2 = document.getElementById("password2");
+    if (showPassword.type === "password" && showPassword2.type === "password" ) {
+      showPassword.type = "text";
+      showPassword2.type = "text";
+    } else {
+      showPassword.type = "password";
+      showPassword2.type = "password";
+    }
+  }
   return (
     <div className="registerMain">
-      <div>
+      <div className="Container11">
         <h1 className="heading">Sign up</h1>
         <form name="register" onSubmit={registerUsersFN }>
           <div className="CustomStyle">
@@ -88,7 +99,7 @@ function Register() {
           <div className="CustomStyle">
             <input type="number" placeholder="Phone" id="phone" maxLength="13" minLength="9" required />
           </div>
-          <div>
+          <div className="customCountry">
             <select name="country" id="country" required>
               <option value="none" selected disabled>Select A Country</option>
               <option value="Jordan">Jordan</option>
@@ -104,10 +115,13 @@ function Register() {
             <p id="errMsgPhone" className="errMsg"></p>
             <p id="errMsgCountry" className="errMsg"></p>
           </div>
+          <div className="showPassword">
+              <input type="checkbox" id="pswShow1" name="pswShow1" onClick={showPassword} /> <label htmlFor="pswShow1">Show password</label>
+            </div>
           <input
             type="submit"
             value="Sign up"
-            className="submitButton btn-primary text-center"
+            className="css-button-rounded--red"
           />
         </form>
       </div>

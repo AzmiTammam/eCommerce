@@ -8,6 +8,7 @@ const SignInPage = ({handleCurrentUser}) => {
         <div className="SignComponents">
             <Login  handleCurrentUser={handleCurrentUser}/>
             <Register />
+            
         </div>
     )
 }
