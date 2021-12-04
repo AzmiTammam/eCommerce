@@ -1,0 +1,36 @@
+.aboutHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgb(204, 200, 200);
+    padding: 25px 0 0 10px;
+}
+/* .all{
+    background-color: rgb(204, 200, 200);
+} */
+.AboutContainer{
+    display: flex;
+flex-direction: row;
+}
+.About-content{
+    font-size: 1.5rem;
+    justify-items: right;
+    margin: 35px 0 0 15px;
+}
+.About-content p {
+    width: 90%;
+}
+.aboutImg{
+  justify-items: right;
+    right: 1px;
+    opacity: 0.2;
+}
+
+    
+@media screen and (max-width: 700px) {
+    .AboutContainer {
+        flex-direction: column;
+    }
+}
+

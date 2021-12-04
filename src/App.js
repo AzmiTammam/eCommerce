@@ -6,6 +6,7 @@ import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/footer';
 import HomePage from './pages/home/homepage.component';
 import SignInPage from './pages/sign-in/sign-in.component';
+import About from './components/about/about.component';
 
 
 
@@ -38,7 +39,9 @@ class App extends Component {
           </Route>
           <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/" />) : (<SignInPage  handleCurrentUser={this.handleCurrentUser} />) }  />
         </Switch>
+        <About/>
         <Footer  />
+
       </div>
     );
   }

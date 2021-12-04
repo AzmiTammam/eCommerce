@@ -3,6 +3,7 @@ import "./homepage.styles.css"
 import FeaturedProducts from '../../components/featured-products/featured-products.component'
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage'
 import Testimonials from '../../components/Testimonials/Testimonials'
+import About from '../../components/about/about.component'
 
 const HomePage = ({items,currentUser}) => {
     return (

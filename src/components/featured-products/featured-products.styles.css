@@ -8,7 +8,10 @@
   height: 350px;
   align-items: center;
   position: relative;
-  border: 5px black solid;
+  border: 2px #a7232c  solid;
+}
+.featured-products-title{
+color: #a7232c;
 }
 .featured-product-image{
     width: 100%;
@@ -113,5 +116,14 @@
         font-size: 1rem;
         min-width: 100px;
         width: auto;
+
     }
-}
+    .card-container{
+        width: 100%;
+    }
+     @media only screen and (max-width: 375px){
+        .card-container{
+            width: 100%;
+        } 
+    }
+} 
