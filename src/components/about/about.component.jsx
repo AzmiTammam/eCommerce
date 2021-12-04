@@ -5,12 +5,17 @@ import Imag1 from "./cap2.png"
 const About = () => {
     return (
         <div className="aboutHeader" id="about-section">
-                <h1 className="about-title">ABOUT US</h1>
+                <h1 className="about-title">About Us</h1>
+                <hr/>
             <div className=" AboutContainer">
 
             <div className="About-content">
             <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quod itaque delectus reprehenderit maiores deleniti perferendis ducimus facilis asperiores sed! Tempora asperiores odio vero cupiditate non nobis, soluta rerum obcaecati amet aperiam alias, harum itaque vitae molestiae, libero pariatur animi eveniet. Ea aspernatur eveniet architecto pariatur ipsum placeat deleniti facilis libero dolores labore nihil, ipsam repellat commodi quod numquam error laboriosam, ex dolor iusto. Ipsum repellat culpa perspiciatis possimus in laborum optio quia iste similique.
+            Welcome to ICap, your number one source for all diffrent kinds of hats.
+             We're dedicated to giving you the very best of our products , with a focus on three characteristics: dependability, 
+             customer service and uniqueness.
+            Founded in 2009 by us, Icap has come a long way from its beginnings 
+            in Amman,Jordan .
             </p>
             </div>
 

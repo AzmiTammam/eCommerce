@@ -19,6 +19,9 @@
   font-size: 5rem;
   color: #a7232c;
 }
+.profile-hr {
+  width: 100% !important;
+}
 .profile p {
   font-family: "Times New Roman", Times, serif !important;
   font-size: 1.7rem;

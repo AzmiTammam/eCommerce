@@ -42,7 +42,6 @@ export class Profile extends Component {
             <div className="weather"><Weather country={localData[i].country}/> </div>   
           </div>
           <div className="container">
-            <hr className="p-5"/>
           <h2>My Purchases</h2>
           <div className="added-items ">
               {localData[i].cartItems.map((item)=>{return (<div>

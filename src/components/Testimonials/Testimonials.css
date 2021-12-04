@@ -16,10 +16,15 @@
 }
 .testimonial-section .header {
   text-align: center;
-    font-size: 5rem;
-    margin: 5rem 0;
-    font-family: 'Oswald', sans-serif;
-    color: black;
+  font-size: 4rem;
+  margin: 6rem 0 3rem 0;
+  font-family: "Times New Roman", Times, serif;
+  color: #a7232c;
+}
+.hr {
+  margin: 1rem auto 3rem auto !important;
+  border: 1px solid gray !important;
+  text-align: center !important;
 }
 .testimonial-section .carousel-inner span {
   color: black;
@@ -31,6 +36,7 @@
 }
 .testimonial-section img {
   margin: auto;
+  width: 30vw !important;
 }
 .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
@@ -40,9 +46,9 @@
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 700px) {
   .testimonial-section img {
-    width: 100% !important;
+    width: 70% !important;
   }
   .testimonial-section {
     width: 100% !important;
