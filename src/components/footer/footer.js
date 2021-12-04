@@ -13,10 +13,10 @@ export default class Footer extends Component {
             been the industry's standard dummy <br /> text ever since the 1500s.
           </p>
           <div className="aboutIcon">
-            <i className="topIcon fab fa-facebook-square"></i>
-            <i className="topIcon fab fa-instagram-square"></i>
-            <i className="topIcon fab fa-pinterest-square"></i>
-            <i className="topIcon fab fa-twitter-square"></i>
+            <a href="https://www.facebook.com/"><i className="topIcon fab fa-facebook-square">   </i></a>
+            <a href="https://www.instagram.com/"><i className="topIcon fab fa-instagram-square"> </i></a>
+            <a href="https://www.pinterest.com/"><i className="topIcon fab fa-pinterest-square"> </i></a>
+            <a href="https://twitter.com/?lang=ar"><i className="topIcon fab fa-twitter-square"> </i></a>
           </div>
         </div>
         <div className="contatUs">
