@@ -2,7 +2,6 @@
 import React from "react";
 import './style.css'
 
-
 function Login({handleCurrentUser}) {
   const loginUsersFN = (e) => {
     e.preventDefault();
@@ -23,74 +22,32 @@ function Login({handleCurrentUser}) {
       }
     }
     if (flag === true) {
-      alert('Weclome!')
-
       let logged = true;
       handleCurrentUser(loginUserName, loginPassword)
+      document.getElementById('pswUsr').style.display='none'
     } else {
-      alert('No user found')
+      document.getElementById('pswUsr').innerHTML="The Password or username is incorrect"
     }
 
-    /*             const items = { ...localStorage };
-            console.log(items); */
   };
   return (
-    <div className="row customRegisterRow">
-      <div className="col-6 offset-3">
-        <div
-          className="alert alert-danger alert-dismissible fade show"
-          id="customAlert1"
-          role="alert"
-        >
-          
-          <strong>
-            <i class="fas fa-exclamation-triangle"></i>
-          </strong>
-          The password you’ve entered is incorrect.
-          <button
-            type="button"
-            className="btn-close customAlertButton"
-            data-bs-dismiss="alert"
-            aria-label="Close"
-          />
-        </div>
-
-        <div className="bgCustom">
-          <h1 className="heading">Sign in</h1>
+    <div className="loginMain">
+        <div>
+        <h1 className="heading">Sign in</h1>
           <form name="login">
-            <div className="input-group">
-              <span className="input-group-text">
-                <i className="far fa-user"></i>
-              </span>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Username"
-                name="username"
-                id="loginUserName"
-              />
+            <div className="CustomStyle">
+              <input type="text" placeholder="Username" name="username" id="loginUserName" />
             </div>
-            <div className="input-group">
-              <span className="input-group-text">
-                <i className="fas fa-lock"></i>
-              </span>
-              <input
-                type="password"
-                className="form-control"
-                placeholder="Password"
-                name="password"
-                id="loginPassword"
-              />
+            <div className="CustomStyle">
+              <input type="password" placeholder="Password" name="password" id="loginPassword"/>
             </div>
-            <input
-              type="submit"
-              value="Sign in"
-              className="btn btn-primary text-center"
-              onClick={loginUsersFN}
-            />
+            <div>
+              <span id="noUsr" className="pswUsr"></span>
+              <span id="pswUsr" className="pswUsr"></span>
+            </div>
+            <input type="submit" value="Sign in" className="submitButton" onClick={loginUsersFN} />
           </form>
         </div>
-      </div>
     </div>
   );
 }
