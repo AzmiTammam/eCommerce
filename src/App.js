@@ -8,6 +8,7 @@ import HomePage from './pages/home/homepage.component';
 import SignInPage from './pages/sign-in/sign-in.component';
 import ShopPage from './pages/shop/shop.component';
 import CheckoutPage from './pages/checkout/checkout-page.component';
+import Profile from './pages/profile/profile';
 
 
 
@@ -23,6 +24,9 @@ class App extends Component {
     }
 
    
+  }
+  signOut = () => {
+    this.setState({currentUser: null})
   }
 
   handleHidden = () => {
@@ -94,13 +98,16 @@ class App extends Component {
     
     return (
       <div className="App">
-      <NavBar currentUser={this.state.currentUser} hidden={this.state.hidden} changeHiddenOnce={this.changeHiddenOnce} handleHidden={this.handleHidden}/>
+      <NavBar currentUser={this.state.currentUser} hidden={this.state.hidden} changeHiddenOnce={this.changeHiddenOnce} handleHidden={this.handleHidden} signOut={this.signOut}/>
       <Switch>
         <Route exact path="/" >
           <HomePage addToCart={this.addToCart} items={this.state.items} currentUser={this.state.currentUser} />
         </Route>
         <Route exact path="/shop" >
           <ShopPage items={this.state.items} currentUser={this.state.currentUser} addToCart={this.addToCart} />
+        </Route>
+        <Route exact path="/profile" >
+          <Profile currentUser={this.state.currentUser} />
         </Route>
         <Route exact path="/checkout" render={() => this.state.currentUser ? (<CheckoutPage addToCart={this.addToCart} removeItemFromCart={this.removeItemFromCart} removeCompletely={this.removeCompletely} currentUser={this.state.currentUser} />) : (<Redirect to="/" />) }  />
         <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/" />) : (<SignInPage  handleCurrentUser={this.handleCurrentUser} />) }  />

@@ -68,6 +68,9 @@
   font-weight: bold;
   bottom: 12px;
 }
+.sign-out{
+  display: flex;
+}
 
 @media screen and (max-width: 777px) {
   .header {
@@ -106,5 +109,8 @@
   }
   .activeBurger{
     display: flex;
+  }
+  .sign-out{
+    flex-direction: column;
   }
 }

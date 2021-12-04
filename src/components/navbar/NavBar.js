@@ -50,18 +50,19 @@ export default class NavBar extends Component {
               <Link to="/shop">Shop</Link>
             </li>
             <li>
-              <a href="#about-section">About</a>
+              <a href="#featured-products-section">Featured Products</a>
             </li>
             <li>
-              <a href="#featured-products-section">Featured Products</a>
+              <a href="#about-section">About</a>
             </li>
             <li>
               <a href="#testimonials-section">Testimonials</a>
             </li>
-            {this.props.currentUser ?  <li>
-              <Link to="profile">Profile</Link>
-            </li> : <li>
-              <Link to="login">SIGN IN</Link>
+            {this.props.currentUser ?  <div className="sign-out">
+              <li><Link to="/profile">Profile</Link></li>
+              <li onClick={this.props.signOut}><Link to="/">Sign Out</Link></li> 
+            </div>  : <li>
+              <Link to="/login">SIGN IN</Link>
             </li>}  
           </ul>
           {this.props.currentUser ? <div className="shoppingCart" onClick={this.props.handleHidden}>

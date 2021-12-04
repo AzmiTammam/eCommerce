@@ -17,8 +17,8 @@
 .about .aboutPara {
   text-align: center;
   font-size: 1.15rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  width: 70%;
+  margin: 0 auto;
 }
 .about .aboutIcon {
   display: flex;
@@ -50,4 +50,20 @@
   font-size: 1.25rem;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+@media screen and (max-width: 450px){
+  .about .aboutTitle {
+    font-size: 1.8rem;
+    margin-top: 1.7rem;
+  }
+  .contatUs .contatUsTitle{
+    font-size: 1.3rem;
+  }
+  .about .aboutPara{
+    font-size: 1rem;
+    width: 90%;
+  }
+  .contatUs .contatUsPara{
+    font-size: 1rem;
+  }
 }

@@ -1,0 +1,41 @@
+.weather-section {
+  display: flex;
+  align-items: center !important;
+  justify-content: center;
+  margin: 10rem;
+  width: 80%;
+  flex-direction: column;
+  border-radius: 1rem;
+}
+.weather-section .card {
+  padding: 5rem;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto;
+  padding: 5px 30px;
+  border-radius: 3rem;
+  background-color: #eaeaea;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.weather-section button {
+  margin-bottom: 3rem;
+  background-color: #a7232c;
+  color: white;
+  padding: 1rem;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 3rem;
+}
+.weather-section .card span {
+  font-size: 4rem;
+}
+@media screen and (max-width: 750px) {
+  .weather-section,
+  .weather-section .card {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+}
