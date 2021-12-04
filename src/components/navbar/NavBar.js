@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import {ReactComponent as ShoppingIcon} from "../../assets/shopping-bag.svg";
+import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -48,15 +48,22 @@ export default class NavBar extends Component {
             <li>
               <a href="#about-section">About</a>
             </li>
-            <li>
-              <Link to="login">SIGN IN</Link>
-            </li>
+            {this.props.currentUser ? (
+              <li>
+                <Link to="profile">Profile</Link>
+              </li>
+            ) : (
+              <li>
+                <Link to="login">SIGN IN</Link>
+              </li>
+            )}
           </ul>
-          {this.props.currentUser ? <div className="shoppingCart">
-              <ShoppingIcon className="shopping-icon"/>
+          {this.props.currentUser ? (
+            <div className="shoppingCart">
+              <ShoppingIcon className="shopping-icon" />
               <span className="item-count">0</span>
-          </div> : null}
-          
+            </div>
+          ) : null}
         </div>
       </div>
     );
