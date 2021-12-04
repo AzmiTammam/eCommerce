@@ -41,6 +41,7 @@ const CheckoutPage = ({currentUser,addToCart,removeItemFromCart,removeCompletely
             })} */}
             <div className="total">
                 <span>Total: ${total}</span>
+                <button type="button" className="confirm-buy" onClick={() => alert("Thank you for buying from us")}>Confirm Purchase</button>
             </div>
         </div>
         )

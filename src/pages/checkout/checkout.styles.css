@@ -28,8 +28,20 @@ width: 23%;
     margin-bottom: 2rem;
     font-size: 30px;
 }
+.confirm-buy{
+    border-radius: 20px;
+    background-color: #950101;
+    color: white;
+    border: none;
+    margin-left: 3rem;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.confirm-buy:hover{
+    background-color: #c90303
+}
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 850px){
     .header-block{
         font-size: 0.9rem;
     }
@@ -38,5 +50,8 @@ width: 23%;
     }
     .total{
         font-size: 1.5rem;
+    }
+    .confirm-buy{
+        font-size: 1.2rem;
     }
 }

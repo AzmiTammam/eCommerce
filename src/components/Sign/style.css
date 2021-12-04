@@ -13,15 +13,7 @@ body {
       text-align: center;
       margin-bottom: 1em;
       color: black;
-}
-
-
-.CustomStyle input {
-      width: 100%;
-      padding: 5px 0 5px 5px;
-      border: 0;
-      outline: none;
-      margin-bottom: 3px;
+      font-size: 3.5rem;
 }
 
 .CustomStyle1 input {
@@ -50,13 +42,7 @@ body {
       font-weight: 500;
 }
 
-.submitButton {
-      margin: 10px auto;
-      display: block;
-      width: 15rem;
-      padding: 5px 20px;
-      cursor: pointer;
-}
+
 
 .alreadyMsg {
       font-size: 1.2rem;
@@ -74,16 +60,81 @@ body {
 }
 
 .CustomStyle input {
-      width: 250px;
-      padding: 10px 0 10px 5px;
+      width: 350px;
+      padding: 10px 0 10px 10px;
       font-size: 1.3rem;
-      border: 0;
+      border-radius: 10px;
+      border: 1.5px solid #636363;
       outline: none;
-      margin-bottom: 3px;
+      margin-bottom: 7px;
+      background-color: transparent;
+      color: black;
+}
+
+.CustomStyle input::placeholder {
+      color: black;
+}
+
+.customCountry select{
+      background-color: transparent;
+      border: 1px solid black;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      color: #555;
+      margin: 0;
+      overflow: hidden;
+      padding: 5px 0 5px 5px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 }
 
 .pswUsr {
       color: red;
       font-size: 1.11rem;
       margin: 5px 0;
+}
+
+.css-button-rounded--red {
+      min-width: 180px;
+      height: 40px;
+      color: #fff;
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: block;
+      font-size: 1.3rem;
+      margin: 20px auto 0 auto;
+      outline: none;
+      border-radius: 25px;
+      border: 2px solid #b80422;
+      background: #b80422;
+    }
+    .css-button-rounded--red:hover {
+      background: #fff;
+      color: #d90429
+    }
+
+.showPassword {
+      margin: 5px 0 0 0;
+      font-size: 1.2rem;
+}
+
+.showPassword label {
+      font-weight: bold;
+      margin: 0;
+}
+
+.Container11 {
+      background: #f3f3f3ad;
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 8.5px );
+      -webkit-backdrop-filter: blur( 8.5px );
+      border-radius: 10px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
+      padding: 35px 100px;
 }
