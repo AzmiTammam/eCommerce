@@ -42,7 +42,7 @@ export class Profile extends Component {
             <div className="weather"><Weather country={localData[i].country}/> </div>   
           </div>
           <div className="container">
-          <h2>My Purchases</h2>
+          <h2 className="purchase">My Purchases</h2>
           <div className="added-items ">
               {localData[i].cartItems.map((item)=>{return (<div>
                  <div><img src={item.imageUrl} alt="item" /> </div>
