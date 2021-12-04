@@ -10,9 +10,10 @@
   cursor: unset;
   margin-top: 0.25rem;
 }
-.header .nav ul {
+.topList{
   display: flex;
   list-style: none;
+  margin-top: 1.5rem;
 }
 .header .nav ul li {
   color: black;
@@ -37,7 +38,7 @@
 .header .burgerMenu {
   display: none;
   color: black;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   margin-right: 0.3rem;
   cursor: pointer;
 }
@@ -67,6 +68,9 @@
   font-weight: bold;
   bottom: 12px;
 }
+.sign-out{
+  display: flex;
+}
 
 @media screen and (max-width: 777px) {
   .header {
@@ -76,8 +80,11 @@
   .header .burgerMenu {
     display: block;
     position: absolute;
-    top: 1.70rem;
+    top: 2.5rem;
     right: 0.9rem;
+  }
+  .navLogo{
+    margin-left: 3rem;
   }
   .nav {
     flex-direction: column;
@@ -95,12 +102,15 @@
   .nav ul li {
     margin: 0.9rem 0;
   }
-  #navShow {
-    display: none;
-  }
   .header .shoppingCart {
     position: absolute;
-    top: 0.1rem;
+    top: 1.2rem;
     right: 3rem;
+  }
+  .activeBurger{
+    display: flex;
+  }
+  .sign-out{
+    flex-direction: column;
   }
 }

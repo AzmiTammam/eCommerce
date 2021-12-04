@@ -3,15 +3,17 @@ import "./homepage.styles.css"
 import FeaturedProducts from '../../components/featured-products/featured-products.component'
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage'
 import Testimonials from '../../components/Testimonials/Testimonials'
+import About from '../../components/about/about.component'
 
-const HomePage = ({items,currentUser}) => {
+const HomePage = ({items,currentUser,addToCart}) => {
     return (
         <div>
             <BackgroundImage />
             <h1 className="featured-products-title">OUR FEATURED PRODUCTS</h1>
             <div className="featured-products-container">
-                {items.filter((element,index) => index<3).map(item => <FeaturedProducts key={item.id} item={item} currentUser={currentUser}/>)}
+                {items.filter((element,index) => index<3).map(item => <FeaturedProducts key={item.id} item={item} addToCart={addToCart} currentUser={currentUser}/>)}
             </div>
+            <About />
             <Testimonials />
         </div>
     )

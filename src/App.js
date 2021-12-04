@@ -4,10 +4,11 @@ import SHOP_DATA from "./shop.data";
 import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import Footer from "./components/footer/footer";
-import Profile from "./pages/profile/Profile";
 import HomePage from "./pages/home/homepage.component";
 import SignInPage from "./pages/sign-in/sign-in.component";
-import Login from "./components/Sign/Login";
+import ShopPage from "./pages/shop/shop.component";
+import CheckoutPage from "./pages/checkout/checkout-page.component";
+import Profile from "./pages/profile/profile";
 
 class App extends Component {
   constructor(props) {
@@ -17,8 +18,88 @@ class App extends Component {
       items: SHOP_DATA,
       cartItems: [],
       currentUser: null,
+      hidden: true,
     };
   }
+  signOut = () => {
+    this.setState({ currentUser: null });
+  };
+
+  handleHidden = () => {
+    this.setState({ hidden: !this.state.hidden });
+  };
+  changeHiddenOnce = () => {
+    this.setState({ hidden: true });
+  };
+
+  removeItemFromCart = (item) => {
+    const localCart = JSON.parse(localStorage.getItem("users"));
+    localCart.forEach((user) => {
+      if (
+        user.username === this.state.currentUser.username &&
+        user.password === this.state.currentUser.pass
+      ) {
+        const existingCartItem = user.cartItems.find(
+          (cartItem) => cartItem.id === item.id
+        );
+        if (existingCartItem.quantity === 1) {
+          user.cartItems.splice(user.cartItems.indexOf(existingCartItem), 1);
+          localStorage.setItem("users", JSON.stringify(localCart));
+        } else {
+          user.cartItems.map((cartItem) =>
+            cartItem.id === item.id ? (cartItem.quantity -= 1) : cartItem
+          );
+          localStorage.setItem("users", JSON.stringify(localCart));
+        }
+      }
+    });
+    this.setState({});
+  };
+
+  addToCart = (item) => {
+    const localCart = JSON.parse(localStorage.getItem("users"));
+    localCart.forEach((user) => {
+      if (
+        user.username === this.state.currentUser.username &&
+        user.password === this.state.currentUser.pass
+      ) {
+        const existingCartItem = user.cartItems.find(
+          (cartItem) => cartItem.id === item.id
+        );
+
+        if (existingCartItem) {
+          user.cartItems.map((cartItem) =>
+            cartItem.id === item.id ? (cartItem.quantity += 1) : cartItem
+          );
+          localStorage.setItem("users", JSON.stringify(localCart));
+        } else {
+          user.cartItems.push({ ...item, quantity: 1 });
+          localStorage.setItem("users", JSON.stringify(localCart));
+        }
+      }
+    });
+    this.setState({});
+  };
+
+  handleCurrentUser = (userName, password) => {
+    this.setState({ currentUser: { username: userName, pass: password } });
+  };
+  removeCompletely = (item) => {
+    const localCart = JSON.parse(localStorage.getItem("users"));
+    localCart.forEach((user) => {
+      if (
+        user.username === this.state.currentUser.username &&
+        user.password === this.state.currentUser.pass
+      ) {
+        const existingCartItem = user.cartItems.find(
+          (cartItem) => cartItem.id === item.id
+        );
+        user.cartItems.splice(user.cartItems.indexOf(existingCartItem), 1);
+        localStorage.setItem("users", JSON.stringify(localCart));
+      }
+    });
+    this.setState({});
+  };
 
   handleCurrentUser = (userName, password) => {
     this.setState({ currentUser: { username: userName, pass: password } });
@@ -27,14 +108,47 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar currentUser={this.state.currentUser} />
+        <NavBar
+          currentUser={this.state.currentUser}
+          hidden={this.state.hidden}
+          changeHiddenOnce={this.changeHiddenOnce}
+          handleHidden={this.handleHidden}
+          signOut={this.signOut}
+        />
         <Switch>
           <Route exact path="/">
             <HomePage
+              addToCart={this.addToCart}
               items={this.state.items}
               currentUser={this.state.currentUser}
             />
           </Route>
+          <Route exact path="/shop">
+            <ShopPage
+              items={this.state.items}
+              currentUser={this.state.currentUser}
+              addToCart={this.addToCart}
+            />
+          </Route>
+          <Route exact path="/profile">
+            <Profile currentUser={this.state.currentUser} />
+          </Route>
+          <Route
+            exact
+            path="/checkout"
+            render={() =>
+              this.state.currentUser ? (
+                <CheckoutPage
+                  addToCart={this.addToCart}
+                  removeItemFromCart={this.removeItemFromCart}
+                  removeCompletely={this.removeCompletely}
+                  currentUser={this.state.currentUser}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
           <Route
             exact
             path="/login"
@@ -46,9 +160,6 @@ class App extends Component {
               )
             }
           />
-          <Route exact path="/profile">
-            <Profile currentUser={this.state.currentUser} />
-          </Route>
         </Switch>
         <Footer />
       </div>

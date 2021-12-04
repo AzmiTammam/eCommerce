@@ -1,0 +1,12 @@
+.title {
+    color: #b9222c;
+    text-align: center;
+    margin: 1rem;
+  }
+  .line {
+    display: block;
+    height: 2.75px;
+    margin: 0 auto 25px auto;
+    width: 140px;
+    background-color: black;
+  }

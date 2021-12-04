@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Weather from "../../components/Weather/Weather";
-import "./Profile.styles.css";
+import "./profile.styles.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 export class Profile extends Component {

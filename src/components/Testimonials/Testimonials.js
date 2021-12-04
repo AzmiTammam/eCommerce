@@ -9,8 +9,7 @@ function Testimonials() {
         className="carousel slide"
         data-ride="carousel"
       >
-        <span className="header">Testimonials</span>
-        <hr />
+        <h1 className="header">TESTIMONIALS</h1>
 
         <div className="carousel-inner">
           <div className="carousel-item active">
