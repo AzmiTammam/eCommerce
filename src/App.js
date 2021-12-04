@@ -50,6 +50,8 @@ class App extends Component {
     })
     this.setState({})
 }
+
+
   addToCart = (item) => {
     const localCart = JSON.parse(localStorage.getItem("users"))
     localCart.forEach(user => {
@@ -98,7 +100,7 @@ class App extends Component {
           <HomePage addToCart={this.addToCart} items={this.state.items} currentUser={this.state.currentUser} />
         </Route>
         <Route exact path="/shop" >
-          <ShopPage items={this.state.items} />
+          <ShopPage items={this.state.items} currentUser={this.state.currentUser} addToCart={this.addToCart} />
         </Route>
         <Route exact path="/checkout" render={() => this.state.currentUser ? (<CheckoutPage addToCart={this.addToCart} removeItemFromCart={this.removeItemFromCart} removeCompletely={this.removeCompletely} currentUser={this.state.currentUser} />) : (<Redirect to="/" />) }  />
         <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/" />) : (<SignInPage  handleCurrentUser={this.handleCurrentUser} />) }  />

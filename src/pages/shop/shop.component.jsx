@@ -2,7 +2,7 @@ import React from "react";
 import "./shop.components.css";
 import FeaturedProducts from "../../components/featured-products/featured-products.component";
 
-const ShopPage = ({ currentUser, items }) => {
+const ShopPage = ({ currentUser, items, addToCart }) => {
   return (
     <div>
       <h1 className="title">Our products</h1>
@@ -13,6 +13,7 @@ const ShopPage = ({ currentUser, items }) => {
             key={item.id}
             item={item}
             currentUser={currentUser}
+            addToCart={addToCart}
           />
         ))}
       </div>

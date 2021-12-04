@@ -1,7 +1,7 @@
 import React from 'react'
 import "./featured-products.styles.css"
 
-const FeaturedProducts = ({item,currentUser}) => {
+const FeaturedProducts = ({item,currentUser,addToCart}) => {
     return (
         <div className="card-container" id="featured-products-section">
              <div className="featured-product-image" style={{
@@ -13,7 +13,7 @@ const FeaturedProducts = ({item,currentUser}) => {
            </div>
            <div className="desc-button">
            <span className="desc">{item.desc}</span>
-           {currentUser ? <button type="button" className="add-to-cart-button">ADD TO CART</button> : null}
+           {currentUser ? <button type="button" className="add-to-cart-button" onClick={()=>addToCart(item)}>ADD TO CART</button> : null}
            </div>
         </div>
     )
