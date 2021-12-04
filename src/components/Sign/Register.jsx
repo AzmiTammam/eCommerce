@@ -60,8 +60,10 @@ function Register() {
           document.getElementById("errMsgPhone").style.display = "none";
           document.getElementById("errMsgCountry").style.display = "none";
           alert('Successfully registered')
-          registerUsersArray.push(users);
-          localStorage.setItem("users", JSON.stringify(registerUsersArray));
+          if(registerUsersArray){
+            registerUsersArray.push(users);
+            localStorage.setItem("users", JSON.stringify(registerUsersArray));
+          } else localStorage.setItem("users", JSON.stringify([users]));
         }
     }
 
