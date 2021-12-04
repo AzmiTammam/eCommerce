@@ -4,18 +4,31 @@
       justify-content: space-evenly;
       justify-items: center;
       margin-bottom: 50px;
-      margin-top: 50px;
+      margin-top: 0px;
 
 }
 
 
 
-@media screen and (max-width:660px) {
+@media screen and (max-width:1120px) {
       .SignComponents {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             justify-items: center;
             margin-top: 25px;
+      }
+}
+
+@media screen and (max-width: 600px) {
+      .Container11 {
+            padding: 15px 20px;
+      }
+
+      .heading {
+            font-size: 2.2rem;
+      }
+      .CustomStyle input {
+            max-width: 200px;
       }
 }
