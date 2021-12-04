@@ -18,6 +18,7 @@ class App extends Component {
       items: SHOP_DATA,
       cartItems: [],
       currentUser: null,
+      hidden: true
     }
 
    
