@@ -28,14 +28,21 @@ function Login({handleCurrentUser}) {
     } else {
       document.getElementById('pswUsr').innerHTML="The Password or username is incorrect"
     }
-
   };
+  function showPassword() {
+    let showPassword = document.getElementById("loginPassword");
+    if (showPassword.type === "password") {
+      showPassword.type = "text";
+    } else {
+      showPassword.type = "password";
+    }
+  }
   return (
     <div className="loginMain">
-        <div>
+        <div className="Container11">
         <h1 className="heading">Sign in</h1>
-          <form name="login">
-            <div className="CustomStyle">
+        <form name="login">
+        <div className="CustomStyle">
               <input type="text" placeholder="Username" name="username" id="loginUserName" />
             </div>
             <div className="CustomStyle">
@@ -45,7 +52,10 @@ function Login({handleCurrentUser}) {
               <span id="noUsr" className="pswUsr"></span>
               <span id="pswUsr" className="pswUsr"></span>
             </div>
-            <input type="submit" value="Sign in" className="submitButton" onClick={loginUsersFN} />
+            <div className="showPassword">
+              <input type="checkbox" id="pswShow" name="pswShow" onClick={showPassword} /> <label htmlFor="pswShow">Show password</label>
+            </div>
+            <input type="submit" value="Sign in" className="css-button-rounded--red" onClick={loginUsersFN} />
           </form>
         </div>
     </div>
