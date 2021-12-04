@@ -91,19 +91,19 @@ class App extends Component {
     
     return (
       <div className="App">
-        <NavBar currentUser={this.state.currentUser} />
-        <Switch>
-          <Route exact path="/" >
-            <HomePage items={this.state.items} currentUser={this.state.currentUser} />
-          </Route>
-          <Route exact path="/shop" >
-            <ShopPage items={this.state.items} currentUser={this.state.currentUser} />
-          </Route>
-          <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/" />) : (<SignInPage  handleCurrentUser={this.handleCurrentUser} />) }  />
-        </Switch>
-        <Footer  />
-
-      </div>
+      <NavBar currentUser={this.state.currentUser} hidden={this.state.hidden} changeHiddenOnce={this.changeHiddenOnce} handleHidden={this.handleHidden}/>
+      <Switch>
+        <Route exact path="/" >
+          <HomePage addToCart={this.addToCart} items={this.state.items} currentUser={this.state.currentUser} />
+        </Route>
+        <Route exact path="/shop" >
+          <ShopPage items={this.state.items} />
+        </Route>
+        <Route exact path="/checkout" render={() => this.state.currentUser ? (<CheckoutPage addToCart={this.addToCart} removeItemFromCart={this.removeItemFromCart} removeCompletely={this.removeCompletely} currentUser={this.state.currentUser} />) : (<Redirect to="/" />) }  />
+        <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/" />) : (<SignInPage  handleCurrentUser={this.handleCurrentUser} />) }  />
+      </Switch>
+      <Footer  />
+    </div>
     );
   }
 }
