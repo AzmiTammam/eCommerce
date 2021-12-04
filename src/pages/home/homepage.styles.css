@@ -12,7 +12,12 @@
     margin: 5rem 0;
     font-family: 'Oswald', sans-serif;
 }
-
+.video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 @media only screen and (max-width: 850px){
     .featured-products-container{
         grid-template-columns: 1fr;

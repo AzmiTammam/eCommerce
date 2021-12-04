@@ -17,8 +17,10 @@ export class Profile extends Component {
         localData[i].username === this.props.currentUser.username &&
         localData[i].password === this.props.currentUser.pass
       ) {
+        console.log(localData[i].cartItems)
         return (
-          <div className="profile">
+          <div>
+              <div className="profile">
             <div className="text">
               <h1>My Account</h1>
               <p>
@@ -37,9 +39,20 @@ export class Profile extends Component {
                 <input type="text" value={localData[i].country} disabled />
               </div>
             </div>
-            <div className="weather"><Weather country={localData[i].country}/> </div>
-          
+            <div className="weather"><Weather country={localData[i].country}/> </div>   
           </div>
+          <div className="container">
+            <hr className="p-5"/>
+          <h2>My Purchases</h2>
+          <div className="added-items ">
+              {localData[i].cartItems.map((item)=>{return (<div>
+                 <div><img src={item.imageUrl} alt="item" /> </div>
+                 <p className="name_">{item.name} <br/><span> X {item.quantity} </span> </p>
+              </div>)})}
+          </div>
+          </div>
+          </div>
+         
         );
       }
      
