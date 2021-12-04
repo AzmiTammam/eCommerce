@@ -4,7 +4,6 @@ import FeaturedProducts from '../../components/featured-products/featured-produc
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage'
 import Testimonials from '../../components/Testimonials/Testimonials'
 import About from '../../components/about/about.component'
-import About from '../../components/about/about.component'
 
 const HomePage = ({items,currentUser}) => {
     return (

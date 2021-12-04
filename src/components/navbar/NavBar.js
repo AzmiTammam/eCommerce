@@ -40,13 +40,13 @@ export default class NavBar extends Component {
               <Link to="/shop">Shop</Link>
             </li>
             <li>
+              <a href="#about-section">About</a>
+            </li>
+            <li>
               <a href="#featured-products-section">Featured Products</a>
             </li>
             <li>
               <a href="#testimonials-section">Testimonials</a>
-            </li>
-            <li>
-              <a href="#about-section">About</a>
             </li>
             <li>
               <Link to="login">SIGN IN</Link>

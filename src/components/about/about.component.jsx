@@ -4,7 +4,7 @@ import Imag1 from "./cap2.png"
 
 const About = () => {
     return (
-        <div className="aboutHeader" >
+        <div className="aboutHeader" id="about-section">
                 <h1>About Us</h1>
             <div className=" AboutContainer">
 
@@ -15,7 +15,7 @@ const About = () => {
             </div>
 
              <div className="imag">
-             <img src={Imag1} width="300px" className="aboutImg"/>
+             <img src={Imag1} width="300px" className="aboutImg" alt="show"/>
              </div>
 
             </div>

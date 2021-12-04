@@ -6,7 +6,7 @@ import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/footer';
 import HomePage from './pages/home/homepage.component';
 import SignInPage from './pages/sign-in/sign-in.component';
-
+import ShopPage from './pages/shop/shop.component';
 
 
 
@@ -36,6 +36,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/" >
             <HomePage items={this.state.items} currentUser={this.state.currentUser} />
+          </Route>
+          <Route exact path="/shop" >
+            <ShopPage items={this.state.items} currentUser={this.state.currentUser} />
           </Route>
           <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/" />) : (<SignInPage  handleCurrentUser={this.handleCurrentUser} />) }  />
         </Switch>
