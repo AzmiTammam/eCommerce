@@ -7,6 +7,7 @@ import Footer from './components/footer/footer';
 import HomePage from './pages/home/homepage.component';
 import SignInPage from './pages/sign-in/sign-in.component';
 import ShopPage from './pages/shop/shop.component';
+import CheckoutPage from './pages/checkout/checkout-page.component';
 
 
 
