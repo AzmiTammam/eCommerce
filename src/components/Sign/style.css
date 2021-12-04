@@ -76,8 +76,8 @@ body {
 }
 
 .customCountry select{
-      background-color: white;
-      border: 1px solid #A7232C;
+      background-color: transparent;
+      border: 1px solid black;
       border-radius: 10px;
       font-size: 1.1rem;
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
