@@ -3,7 +3,9 @@
       flex-direction: row;
       justify-content: space-evenly;
       justify-items: center;
-      margin-bottom: 25px;
+      margin-bottom: 50px;
+      margin-top: 50px;
+
 }
 
 
@@ -14,6 +16,6 @@
             flex-direction: column;
             justify-content: space-evenly;
             justify-items: center;
-            
+            margin-top: 25px;
       }
 }

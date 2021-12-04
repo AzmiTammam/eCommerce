@@ -29,6 +29,10 @@
   padding: 1rem 10px;
   margin-top: 20px;
   width: 90px;
+  display: inline;
+}
+.backgroundImage a{
+  width: 5%;
 }
 
 @media screen and (max-width: 381px) {

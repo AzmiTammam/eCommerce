@@ -15,9 +15,11 @@
   color: gray !important;
 }
 .testimonial-section .header {
-  font-size: 4rem;
-  color: #a7232c;
-  font-family: "Times New Roman", Times, serif !important;
+  text-align: center;
+    font-size: 5rem;
+    margin: 5rem 0;
+    font-family: 'Oswald', sans-serif;
+    color: black;
 }
 .testimonial-section .carousel-inner span {
   color: black;

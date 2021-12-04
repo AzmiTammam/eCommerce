@@ -10,7 +10,12 @@
 } */
 .AboutContainer{
     display: flex;
-flex-direction: row;
+}
+.about-title{
+    text-align: center;
+    font-size: 5rem;
+    margin: 2rem 0;
+    font-family: 'Oswald', sans-serif;
 }
 .About-content{
     font-size: 1.5rem;
@@ -19,6 +24,8 @@ flex-direction: row;
 }
 .About-content p {
     width: 90%;
+    margin: 0 auto;
+    font-size: 1.8rem;
 }
 .aboutImg{
   justify-items: right;
