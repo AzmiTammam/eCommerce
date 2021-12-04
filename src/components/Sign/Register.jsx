@@ -26,7 +26,7 @@ function Register() {
     if (password1 !== password2) {
       document.getElementById("errMsgPsw").style.display = "block";
       document.getElementById("errMsgPsw").innerHTML =
-        "The passwords doesn't match 🤣";
+        "The passwords doesn't match";
     } else if (password1.length < 6) {
       document.getElementById("errMsgPsw").style.display = "block";
       document.getElementById("errMsgPsw").innerHTML =
@@ -35,10 +35,15 @@ function Register() {
       document.getElementById("errMsgUsr").style.display = "block";
       document.getElementById("errMsgUsr").innerHTML =
         "The username must be more than 4";
-    } else {
+    } else if (phone.length < 9) {
+      document.getElementById("errMsgPhone").style.display = "block";
+      document.getElementById("errMsgPhone").innerHTML = "The phone number must be 9 numbers"
+    }
+    else {
       document.getElementById("errMsgPsw").style.display = "none";
       document.getElementById("errMsgUsr").style.display = "none";
-
+      document.getElementById("errMsgPhone").style.display = "none";
+      alert('Successfully registered')
       registerUsersArray.push(users);
       localStorage.setItem("users", JSON.stringify(registerUsersArray));
       
@@ -53,19 +58,11 @@ function Register() {
             <input type="text" placeholder="Username" id="username" required />
           </div>
           <div className="CustomStyle1">
-            <input
-              type="password"
-              placeholder="Password"
-              name="password1"
-              id="password1"
-              required
+            <input type="password" placeholder="Password" name="password1" id="password1" required
             />
-            <input
-              type="password"
-              placeholder="Confirm password"
-              name="password2"
-              id="password2"
-              required
+          </div>
+          <div className="CustomStyle1">
+          <input type="password" placeholder="Confirm password" name="password2" id="password2" required
             />
           </div>
           <div className="CustomStyle">
@@ -90,6 +87,7 @@ function Register() {
           <div>
             <p id="errMsgPsw" className="errMsg"></p>
             <p id="errMsgUsr" className="errMsg"></p>
+            <p id="errMsgPhone" className="errMsg"></p>
           </div>
           <input
             type="submit"

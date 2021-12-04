@@ -1,0 +1,19 @@
+.SignComponents {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      justify-items: center;
+      margin-bottom: 25px;
+}
+
+
+
+@media screen and (max-width:660px) {
+      .SignComponents {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            justify-items: center;
+            
+      }
+}
