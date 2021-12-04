@@ -24,9 +24,67 @@ class App extends Component {
    
   }
 
+  handleHidden = () => {
+    this.setState({hidden: !this.state.hidden})
+  }
+  changeHiddenOnce = () => {
+    this.setState({hidden: true})
+  }
+
+
+  removeItemFromCart = (item) => {
+    const localCart = JSON.parse(localStorage.getItem("users"))
+    localCart.forEach(user => {
+        if(user.username === this.state.currentUser.username && user.password === this.state.currentUser.pass){
+            const existingCartItem = user.cartItems.find(cartItem => cartItem.id === item.id)
+            if(existingCartItem.quantity === 1){
+               user.cartItems.splice(user.cartItems.indexOf(existingCartItem),1)
+               localStorage.setItem("users" , JSON.stringify(localCart))
+            } else {
+                user.cartItems.map(cartItem => cartItem.id === item.id ? cartItem.quantity -=1 : cartItem) 
+                localStorage.setItem("users" , JSON.stringify(localCart))   
+            }
+
+        }
+    })
+    this.setState({})
+}
+  addToCart = (item) => {
+    const localCart = JSON.parse(localStorage.getItem("users"))
+    localCart.forEach(user => {
+        if(user.username === this.state.currentUser.username && user.password === this.state.currentUser.pass){
+            const existingCartItem = user.cartItems.find(
+                cartItem => cartItem.id === item.id
+            )
+        
+            if(existingCartItem){
+               user.cartItems.map(cartItem => cartItem.id === item.id ? cartItem.quantity +=1 : cartItem)
+               localStorage.setItem("users" , JSON.stringify(localCart))
+            } else {
+                user.cartItems.push({...item, quantity: 1})
+               localStorage.setItem("users" , JSON.stringify(localCart))
+            }
+        }
+    })
+    this.setState({})
+}
+
   handleCurrentUser = (userName,password) => {
     this.setState({currentUser: {username: userName, pass: password}})
   }
+  removeCompletely = (item) => {
+    const localCart = JSON.parse(localStorage.getItem("users"))
+      localCart.forEach(user => {
+          if(user.username === this.state.currentUser.username && user.password === this.state.currentUser.pass){
+              const existingCartItem = user.cartItems.find(
+                  cartItem => cartItem.id === item.id)
+                  user.cartItems.splice(user.cartItems.indexOf(existingCartItem),1)
+                  localStorage.setItem("users" , JSON.stringify(localCart))
+          }
+      })
+      this.setState({})
+  }
+
 
 
   render() {
