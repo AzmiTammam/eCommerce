@@ -11,17 +11,15 @@ const HomePage = ({items,currentUser,addToCart}) => {
             <BackgroundImage />
             <div className="featured-products">
             <h1 className="featured-products-title">Our Feautured Products</h1>
-            <hr className="hr"/>
             </div>   
             <div className="featured-products-container">
                 {items.filter((element,index) => index<3).map(item => <FeaturedProducts key={item.id} item={item} addToCart={addToCart} currentUser={currentUser}/>)}
             </div>
             <About />
-           
-            <Testimonials />
             <div className="video">
             <YouTube />
             </div>
+            <Testimonials />
         </div>
     )
 }

@@ -20,7 +20,7 @@
   font-family: "Times New Roman", Times, serif;
   color: #a7232c;
 }
-hr {
+.line{
   width: 10% !important;
   margin: 1rem auto 3rem auto;
   border: 1px solid gray !important;
@@ -47,5 +47,8 @@ hr {
 @media screen and (max-width: 700px) {
   .AboutContainer {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+  
 }

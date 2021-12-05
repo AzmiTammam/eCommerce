@@ -21,10 +21,11 @@
   font-family: "Times New Roman", Times, serif;
   color: #a7232c;
 }
-.hr {
-  margin: 1rem auto 3rem auto !important;
+.line{
+  width: 10% !important;
+  margin: 1rem auto 3rem auto;
   border: 1px solid gray !important;
-  text-align: center !important;
+  text-align: center;
 }
 .testimonial-section .carousel-inner span {
   color: black;

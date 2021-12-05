@@ -10,8 +10,7 @@ function Testimonials() {
         data-ride="carousel"
       >
         <h1 className="header">Testimonials</h1>
-        <hr className="hr" />
-
+        
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
