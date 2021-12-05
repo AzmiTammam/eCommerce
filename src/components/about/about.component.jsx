@@ -10,10 +10,10 @@ const About = () => {
 
             <div className="About-content">
             <p>
-            Welcome to ICap, your number one source for all diffrent kinds of hats.
+            Welcome to iCAP, your number one source for all different kinds of hats.
              We're dedicated to giving you the very best of our products , with a focus on three characteristics: dependability, 
              customer service and uniqueness.
-            Founded in 2009 by us, Icap has come a long way from its beginnings 
+            Founded in 2009 by us, iCAP has come a long way from its beginnings 
             in Amman,Jordan .
             </p>
             </div>

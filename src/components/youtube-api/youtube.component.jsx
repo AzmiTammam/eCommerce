@@ -1,6 +1,6 @@
 import React from "react";
 import "./youtube.styles.css";
-const API = "AIzaSyBiEmZqE3gVu9UtFpv1QUm6jr7jeu0Y6Ws";
+const API = "AIzaSyA7DYdrP23A-pqHu5k3hKfHA0_Wyn3Ev4o";
 const channelId = "UC5KKmJfmBFDca1hkwKJ53Ng";
 const maxResults = 32;
 const finalUrl = `https://www.googleapis.com/youtube/v3/search?key=${API}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`;
