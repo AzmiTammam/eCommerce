@@ -4,7 +4,7 @@ import FeaturedProducts from '../../components/featured-products/featured-produc
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage'
 import Testimonials from '../../components/Testimonials/Testimonials'
 import About from '../../components/about/about.component'
-import Youtube from "../../components/youtube-api/youtube.component"
+import YouTube from "../../components/youtube-api/youtube.component"
 const HomePage = ({items,currentUser,addToCart}) => {
     return (
         <div>
@@ -20,7 +20,7 @@ const HomePage = ({items,currentUser,addToCart}) => {
            
             <Testimonials />
             <div className="video">
-            <Youtube />
+            <YouTube />
             </div>
         </div>
     )
