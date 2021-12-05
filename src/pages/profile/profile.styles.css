@@ -19,6 +19,9 @@
   font-size: 5rem;
   color: #a7232c;
 }
+.profile-hr {
+  width: 100% !important;
+}
 .profile p {
   font-family: "Times New Roman", Times, serif !important;
   font-size: 1.7rem;
@@ -63,6 +66,8 @@
   display: flex;
   margin-top: 5rem;
   flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 .added-items .name_ {
   font-size: 1.8rem;
@@ -70,6 +75,10 @@
   color: gray;
   margin-bottom: 3rem;
   margin-top: 0.5rem;
+  text-align: center;
+}
+.purchase {
+  text-align: center;
 }
 
 .added-items .name_ span {
@@ -78,8 +87,10 @@
   font-weight: bolder;
 }
 .added-items img {
-  width: 50%;
-  border-radius: 1rem;
+  width: 22rem;
+  height: 25rem;
+  padding: 2rem;
+  border-radius: 3rem;
 }
 
 @media screen and (max-width: 750px) {
