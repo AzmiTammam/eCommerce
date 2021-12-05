@@ -21,6 +21,26 @@ width: 23%;
 .header-block:last-child {
     width: 8%;
 }
+.empty-message-checkout{
+   display: flex; 
+   margin: 3rem;
+   justify-content: space-around;
+   align-items: center;
+
+}
+.go-to-shop{
+    padding: 1rem;
+    margin-left: 3rem;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    background-color: #49FF00;
+    color: white;
+    border: solid 2px greenyellow;
+
+}
+.go-to-shop:hover{
+    background-color: #3cbd08; 
+}
   
 .total {
     margin-top: 30px;
@@ -53,5 +73,11 @@ width: 23%;
     }
     .confirm-buy{
         font-size: 1.2rem;
+    }
+    .empty-message-checkout .go-to-shop{
+        font-size: 0.8rem;
+    }
+    .empty-message-checkout h1{
+        font-size: 1.5rem;
     }
 }

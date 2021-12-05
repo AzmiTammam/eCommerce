@@ -55,6 +55,19 @@ class App extends Component {
     this.setState({})
 }
 
+removeEverything = () => {
+  const localUsers = JSON.parse(localStorage.getItem("users"))
+    let cart;
+    localUsers.forEach(user => {
+        if(user.username === this.state.currentUser.username && user.password === this.state.currentUser.pass){
+            cart = user.cartItems
+            cart.splice(0,cart.length )
+            localStorage.setItem("users", JSON.stringify(localUsers))
+            alert("Thank you for buying from us")
+            this.setState({})
+        }
+    })
+}
 
   addToCart = (item) => {
     const localCart = JSON.parse(localStorage.getItem("users"))
@@ -98,7 +111,7 @@ class App extends Component {
     
     return (
       <div className="App">
-      <NavBar currentUser={this.state.currentUser} hidden={this.state.hidden} changeHiddenOnce={this.changeHiddenOnce} handleHidden={this.handleHidden} signOut={this.signOut}/>
+      <NavBar currentUser={this.state.currentUser} hidden={this.state.hidden} changeHiddenOnce={this.changeHiddenOnce} handleHidden={this.handleHidden} signOut={this.signOut} removeCompletely={this.removeCompletely}/>
       <Switch>
         <Route exact path="/" >
           <HomePage addToCart={this.addToCart} items={this.state.items} currentUser={this.state.currentUser} />
@@ -109,7 +122,7 @@ class App extends Component {
         <Route exact path="/profile" >
           <Profile currentUser={this.state.currentUser} />
         </Route>
-        <Route exact path="/checkout" render={() => this.state.currentUser ? (<CheckoutPage addToCart={this.addToCart} removeItemFromCart={this.removeItemFromCart} removeCompletely={this.removeCompletely} currentUser={this.state.currentUser} />) : (<Redirect to="/" />) }  />
+        <Route exact path="/checkout" render={() => this.state.currentUser ? (<CheckoutPage removeEverything={this.removeEverything} addToCart={this.addToCart} removeItemFromCart={this.removeItemFromCart} removeCompletely={this.removeCompletely} currentUser={this.state.currentUser} />) : (<Redirect to="/" />) }  />
         <Route exact path="/login" render={() => this.state.currentUser ? (<Redirect to="/" />) : (<SignInPage  handleCurrentUser={this.handleCurrentUser} />) }  />
       </Switch>
       <Footer  />
