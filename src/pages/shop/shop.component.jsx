@@ -4,9 +4,9 @@ import FeaturedProducts from "../../components/featured-products/featured-produc
 
 const ShopPage = ({ currentUser, items, addToCart }) => {
   return (
-    <div>
-      <h1 className="title">Our products</h1>
-      <span className="line"></span>
+    <div className="shop-container">
+      <h1 className="title">Our Products</h1>
+      <hr/>
       <div className="featured-products-container">
         {items.map((item) => (
           <FeaturedProducts

@@ -1,33 +1,54 @@
-import React from 'react';
-import YoutubeFetch from './youtube';
+import React from "react";
+import "./youtube.styles.css";
+const API = "AIzaSyA7DYdrP23A-pqHu5k3hKfHA0_Wyn3Ev4o";
+const channelId = "UC5KKmJfmBFDca1hkwKJ53Ng";
+const maxResults = 32;
+const finalUrl = `https://www.googleapis.com/youtube/v3/search?key=${API}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`;
 
-class Youtube extends React.Component {
-    constructor(props) {
+class YouTube extends React.Component {
+    constructor(props){
         super(props);
-        this.state = {
-            videos: [],
-        };
+
+        this.state={
+            error: null,
+            data: []
+        }
     }
 
-    async componentDidMount() {
-        const url = 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=1&playlistId=PL3WCgw5_iBX6zBNibX3c9GOB9WTL_qQf9&key=AIzaSyB67B_szVr6uSIUounQ8IR2xsErKFv1pBU';
-
-        const response = await fetch(url);
-        const data = await response.json();
+   async componentDidMount(){
+    try{
+        const response = await fetch(finalUrl);
+        const data = await response.json()
         console.log(data)
-        this.setState({ videos: data.items });
+        const result = data.items[16].id.videoId
+        console.log(result)
+        this.setState({data: result})
+    } catch (err) {
+        this.setState({error: err.message})
     }
-    render() {
-        const { videos } = this.state;
-        const renderedVideos = videos.map((video, index) => {
-            return <YoutubeFetch key={video.id} />;
-        });
-        return (
-            <div className='YouTubeFullDiv'>               
-                <div className='YouAPI'>{renderedVideos}</div>
+    }
 
+    render(){
+        console.log(this.state.data)
+        return (
+            <div className="youtube">
+              {this.state.error ? <div>{this.state.error}</div> : null}
+                <div>
+                  <iframe
+                    title="Hats Commercial"
+                    width="100%"
+                    height="700"
+                    src={`https://www.youtube.com/embed/${this.state.data}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
             </div>
-        );
+          );
     }
 }
-export default Youtube;
+
+
+
+export default YouTube;
