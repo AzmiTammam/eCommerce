@@ -89,6 +89,7 @@ export default class NavBar extends Component {
         </div>
         {this.props.hidden ? null : (
           <CartDropdown
+            removeCompletely={this.props.removeCompletely}
             currentUser={this.props.currentUser}
             handleHidden={this.props.handleHidden}
           />
