@@ -1,8 +1,9 @@
 import React from 'react'
 import "./checkout.styles.css"
-import CheckoutItem from '../../components/checkout-item/checkout-item.component'
+import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import {Link} from "react-router-dom"
 
-const CheckoutPage = ({currentUser,addToCart,removeItemFromCart,removeCompletely}) =>  {
+const CheckoutPage = ({currentUser,addToCart,removeItemFromCart,removeCompletely,removeEverything}) =>  {
    
     const localUsers = JSON.parse(localStorage.getItem("users"))
     let cart;
@@ -32,6 +33,10 @@ const CheckoutPage = ({currentUser,addToCart,removeItemFromCart,removeCompletely
                     <span>Remove</span>
                 </div>
             </div>
+            {cart.length ? null : <div className="empty-message-checkout">
+                <h1>Your Cart Is Empty</h1>
+                <Link to="/shop"><button type="button" className="go-to-shop">Go To Shop</button></Link>
+                </div>}
             {cart.map(element => <CheckoutItem key={element.id} cartItem={element} removeCompletely={removeCompletely} addToCart={addToCart} removeItemFromCart={removeItemFromCart} />)}
             {/* {localUsers.forEach(user => {
                 if(user.username === currentUser.username && user.password === currentUser.pass){
@@ -41,7 +46,7 @@ const CheckoutPage = ({currentUser,addToCart,removeItemFromCart,removeCompletely
             })} */}
             <div className="total">
                 <span>Total: ${total}</span>
-                <button type="button" className="confirm-buy" onClick={() => alert("Thank you for buying from us")}>Confirm Purchase</button>
+                {cart.length ? <button type="button" className="confirm-buy" onClick={removeEverything}>Confirm Purchase</button>: null}
             </div>
         </div>
         )

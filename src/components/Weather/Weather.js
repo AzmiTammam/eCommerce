@@ -24,7 +24,7 @@ function Weather(props) {
           <div class="card-body justify-content-center">
           <div> <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png"/> </div>
               <h5 class="card-title">${data.name}</h5>   
-              <span className='temp' >${data.main.temp}</span>     
+              <span className='temp' >${data.main.temp}C</span>     
               <p class="card-text ">Weather conditions are described as: ${data.weather[0].description}</p>
               <p className='temp' >humidity: ${data.main.humidity} |  wind: ${data.wind.speed}</p>  
             
