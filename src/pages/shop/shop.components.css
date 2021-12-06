@@ -1,12 +1,23 @@
 .title {
-    color: #b9222c;
-    text-align: center;
-    margin: 1rem;
-  }
-  .line {
-    display: block;
-    height: 2.75px;
-    margin: 0 auto 25px auto;
-    width: 140px;
-    background-color: black;
-  }
+  text-align: center;
+  font-size: 4rem;
+  margin: 6rem 0 3rem 0;
+  font-family: "Times New Roman", Times, serif;
+  color: #a7232c;
+}
+hr {
+  width: 10% !important;
+  margin: 1rem auto 3rem auto;
+  border: 1px solid gray !important;
+  text-align: center;
+}
+.line {
+  display: block;
+  height: 2.75px;
+  margin: 0 auto 25px auto;
+  width: 140px;
+  background-color: black;
+}
+.shop-container {
+  margin: 5rem 0;
+}

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./style.css";
 
 function Register() {
@@ -12,7 +11,8 @@ function Register() {
     let password2 = document.getElementById("password2").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
-    let country = document.getElementById("country").value
+    let country = document.getElementById("country").value;
+    let formRegister = document.getElementById("register-form");
 
     let users = {
       username: username,
@@ -60,8 +60,15 @@ function Register() {
           document.getElementById("errMsgPhone").style.display = "none";
           document.getElementById("errMsgCountry").style.display = "none";
           alert('Successfully registered')
-          registerUsersArray.push(users);
+          if(registerUsersArray){
+            registerUsersArray.push(users);
           localStorage.setItem("users", JSON.stringify(registerUsersArray));
+          formRegister.reset()
+          }else {
+            localStorage.setItem("users", JSON.stringify([users]));
+          formRegister.reset()
+          }
+          
         }
     }
 
@@ -81,7 +88,7 @@ function Register() {
     <div className="registerMain">
       <div className="Container11">
         <h1 className="heading">Sign up</h1>
-        <form name="register" onSubmit={registerUsersFN }>
+        <form name="register" onSubmit={registerUsersFN } id="register-form">
           <div className="CustomStyle">
             <input type="text" placeholder="Username" id="username" required />
           </div>

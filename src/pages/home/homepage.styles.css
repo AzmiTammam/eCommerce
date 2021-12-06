@@ -1,24 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
 
-.featured-products-container{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    width: 80%;
-    margin: 0 auto;
+.featured-products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+  margin: 0 auto;
 }
-.featured-products-title{
-    text-align: center;
-    font-size: 5rem;
-    margin: 5rem 0;
-    font-family: 'Oswald', sans-serif;
+.featured-products {
+  margin-bottom: 5rem;
 }
-
-@media only screen and (max-width: 850px){
-    .featured-products-container{
-        grid-template-columns: 1fr;
-        align-items: center;
-        justify-content: center;
-    }
+.featured-products-title {
+  text-align: center;
+  font-size: 4rem;
+  margin: 6rem 0 3rem 0;
+  font-family: "Times New Roman", Times, serif;
+  color: #a7232c;
 }
-
-    
+.line{
+  width: 10% !important;
+  margin: 1rem auto 3rem auto;
+  border: 1px solid gray !important;
+  text-align: center;
+}
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media only screen and (max-width: 850px) {
+  .featured-products-container {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+}

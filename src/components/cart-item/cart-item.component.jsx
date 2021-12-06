@@ -1,7 +1,7 @@
 import React from 'react'
 import "./cart-item.styles.css"
 
-const CartItem = ({item}) => {
+const CartItem = ({item,removeCompletely}) => {
     const {imageUrl, price, name,quantity} = item
     return (
         <div className="cart-item">
@@ -10,6 +10,7 @@ const CartItem = ({item}) => {
             <span className="item-name">{name}</span>
             <span className="item-price">{quantity} x ${price}</span>
         </div>
+        <div className="remove-button-dropdown" onClick={() => removeCompletely(item)}>&#10005;</div>
     </div>
     )
 }
