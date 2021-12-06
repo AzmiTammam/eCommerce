@@ -28,15 +28,16 @@ class App extends Component {
   signOut = () => {
     this.setState({currentUser: null})
   }
-
-  handleHidden = () => {
+  /* Display none for cart icon when you click it */
+  handleHidden = () => { 
     this.setState({hidden: !this.state.hidden})
   }
-  changeHiddenOnce = () => {
+  /* For burger menu and cart */
+  changeHiddenOnce = () => { 
     this.setState({hidden: true})
   }
 
-
+  /* reduce quantity */
   removeItemFromCart = (item) => {
     const localCart = JSON.parse(localStorage.getItem("users"))
     localCart.forEach(user => {
@@ -54,7 +55,7 @@ class App extends Component {
     })
     this.setState({})
 }
-
+  /* when you press confirm purchase */
 removeEverything = () => {
   const localUsers = JSON.parse(localStorage.getItem("users"))
     let cart;
@@ -68,7 +69,7 @@ removeEverything = () => {
         }
     })
 }
-
+  /* Add item and add the quantity */
   addToCart = (item) => {
     const localCart = JSON.parse(localStorage.getItem("users"))
     localCart.forEach(user => {
@@ -88,11 +89,11 @@ removeEverything = () => {
     })
     this.setState({})
 }
-
-  handleCurrentUser = (userName,password) => {
+  /* Check if the user log in or not */
+  handleCurrentUser = (userName,password) => { 
     this.setState({currentUser: {username: userName, pass: password}})
   }
-  removeCompletely = (item) => {
+  removeCompletely = (item) => { /* remove all item */
     const localCart = JSON.parse(localStorage.getItem("users"))
       localCart.forEach(user => {
           if(user.username === this.state.currentUser.username && user.password === this.state.currentUser.pass){

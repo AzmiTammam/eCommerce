@@ -10,7 +10,7 @@ function Login({handleCurrentUser}) {
     const loginPassword = document.getElementById("loginPassword").value;
 
     const localData = JSON.parse(localStorage.getItem("users"));
-    console.log(localData);
+
 
     let flag = false;
     for (const i in localData) {
