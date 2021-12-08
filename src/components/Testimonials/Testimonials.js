@@ -10,12 +10,12 @@ function Testimonials() {
         data-ride="carousel"
       >
         <h1 className="header">Testimonials</h1>
-        
+
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
               className="d-block w-50 pb-3"
-              src="./images/testi2.jpeg"
+              src="./images/cap2.jpg"
               alt="First slide"
             />
             <i className="fas fa-quote-left "></i>
@@ -29,7 +29,7 @@ function Testimonials() {
           <div className="carousel-item">
             <img
               className="d-block w-50 pb-3"
-              src="./images/testi3.jpg"
+              src="./images/cap1.jpg"
               alt="Second slide"
             />
             <i className="fas fa-quote-left "></i>
@@ -43,7 +43,7 @@ function Testimonials() {
           <div className="carousel-item">
             <img
               className="d-block w-50 pb-3"
-              src="./images/testi4.jpg"
+              src="./images/cap3.jpeg"
               alt="Third slide"
             />
             <i className="fas fa-quote-left "></i>
