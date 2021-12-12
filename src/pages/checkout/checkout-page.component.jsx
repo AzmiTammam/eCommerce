@@ -16,7 +16,7 @@ const CheckoutPage = ({currentUser,addToCart,removeItemFromCart,removeCompletely
     })
         return (
             <div className="checkout-page">
-            <div className="checkout-header">
+                {cart.length ? <div className="checkout-header">
                 <div className="header-block">
                     <span>Product</span>
                 </div>
@@ -32,7 +32,8 @@ const CheckoutPage = ({currentUser,addToCart,removeItemFromCart,removeCompletely
                 <div className="header-block">
                     <span>Remove</span>
                 </div>
-            </div>
+            </div> : null }
+            
             {cart.length ? null : <div className="empty-message-checkout">
                 <h1>Your Cart Is Empty</h1>
                 <Link to="/shop"><button type="button" className="go-to-shop">Go To Shop</button></Link>
