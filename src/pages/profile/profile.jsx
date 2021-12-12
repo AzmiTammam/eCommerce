@@ -3,32 +3,37 @@ import React, { Component } from "react";
 import "./profile.styles.css";
 import "bootstrap/dist/css/bootstrap.css";
 const apiKey = "3025d0777154910572eb91d5d128c969";
-const localUsers = JSON.parse(localStorage.getItem("users"))
-let myCountry;
+
 
 class Profile extends Component {
   constructor(props){
     super(props);
     this.state={
       weatherData: null,
-      error: null
+      error: null,
+      myCountry: "Jordan",
+      localUsers: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : []
     }
   }
   
   async componentDidMount(){
-    try{
-    for (const i in localUsers) {
-      if (
-        localUsers[i].username === this.props.currentUser.username &&
-        localUsers[i].password === this.props.currentUser.pass
-      ){
-       myCountry = localUsers[i].country
+    
+    for (const i in this.state.localUsers) {
+      if(this.props.currentUser){
+        if (
+          this.state.localUsers[i].username === this.props.currentUser.username &&
+          this.state.localUsers[i].password === this.props.currentUser.pass
+        ){
+          console.log(this.state.localUsers)
+        await this.setState({myCountry: this.state.localUsers[i].country})
+        console.log(this.state.myCountry)
+        }
       }
     }
     
       const response = await fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" +
-          myCountry +
+          this.state.myCountry +
           "&appid=" +
           apiKey +
           "&units=metric"
@@ -36,14 +41,13 @@ class Profile extends Component {
       const data = await response.json();
       console.log(data)
       this.setState({weatherData: data})
-    } catch (err){
-      this.setState({error: err.message})
-    }
+    // } catch (err){
+    //   this.setState({error: err.message})
+    // }
   }
   render() {
-    const localUsers = JSON.parse(localStorage.getItem("users"))
     let cartAndUser;
-    localUsers.forEach(user => {
+    this.state.localUsers.forEach(user => {
       if(this.props.currentUser){
         if(user.username === this.props.currentUser.username && user.password === this.props.currentUser.pass){
           cartAndUser = user
