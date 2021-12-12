@@ -28,6 +28,27 @@
   align-items: center;
   width: 100%;
 }
+.go-to-shop-from-home{
+  background-color: #a7232c;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 1rem 10px;
+  margin-top: 20px;
+  width: 90px;
+  display: inline;
+}
+.go-to-shop-from-home:hover {
+  background-color: #581217;
+}
+.go-to-shop-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media only screen and (max-width: 850px) {
   .featured-products-container {
     grid-template-columns: 1fr;

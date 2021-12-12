@@ -1,5 +1,6 @@
 import React from 'react'
 import "./featured-products.styles.css"
+import { Link } from 'react-router-dom'
 
 const FeaturedProducts = ({item,currentUser,addToCart}) => {
     return (
