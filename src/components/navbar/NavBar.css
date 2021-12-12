@@ -79,6 +79,7 @@
 }
 .sign-out{
   display: flex;
+  text-align: center;
 }
 
 @media screen and (max-width: 790px) {
