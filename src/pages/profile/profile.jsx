@@ -16,6 +16,7 @@ class Profile extends Component {
   }
   
   async componentDidMount(){
+    try{
     for (const i in localUsers) {
       if (
         localUsers[i].username === this.props.currentUser.username &&
@@ -24,7 +25,7 @@ class Profile extends Component {
        myCountry = localUsers[i].country
       }
     }
-    try{
+    
       const response = await fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" +
           myCountry +
@@ -43,12 +44,15 @@ class Profile extends Component {
     const localUsers = JSON.parse(localStorage.getItem("users"))
     let cartAndUser;
     localUsers.forEach(user => {
+      if(this.props.currentUser){
         if(user.username === this.props.currentUser.username && user.password === this.props.currentUser.pass){
           cartAndUser = user
         }
+      }
     })
         return (
           <div>
+            {this.props.currentUser ? <div>
               <div className="profile">
             <div className="text">
               <h1>My Account</h1>
@@ -90,6 +94,8 @@ class Profile extends Component {
               </div>)})}
           </div>
           </div>
+            </div> : <p>You are not logged in and therefore not allowed in this page</p>}
+              
           </div>
          
         );
