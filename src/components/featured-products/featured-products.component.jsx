@@ -13,7 +13,7 @@ const FeaturedProducts = ({item,currentUser,addToCart}) => {
            </div>
            <div className="desc-button">
            <span className="desc">{item.desc}</span>
-           {currentUser ? <button type="button" className="add-to-cart-button" onClick={()=>addToCart(item)}>ADD TO CART</button> : null}
+        <button type="button" className="add-to-cart-button" onClick={()=>addToCart(item)}>ADD TO CART</button>
            </div>
         </div>
     )

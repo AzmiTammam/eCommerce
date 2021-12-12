@@ -5,10 +5,10 @@
   grid-template-columns: repeat(3, 1fr);
   width: 80%;
   margin: 0 auto;
+  justify-items: center;
+  align-items: center;
 }
-.featured-products {
-  margin-bottom: 5rem;
-}
+
 .featured-products-title {
   text-align: center;
   font-size: 4rem;

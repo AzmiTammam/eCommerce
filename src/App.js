@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import './App.css'
 import SHOP_DATA from './shop.data';
-import {Route, Switch,Redirect} from "react-router-dom"
+import {Route, Switch,Redirect,withRouter} from "react-router-dom"
 import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/footer';
 import HomePage from './pages/home/homepage.component';
@@ -70,23 +70,29 @@ removeEverything = () => {
 }
 
   addToCart = (item) => {
-    const localCart = JSON.parse(localStorage.getItem("users"))
-    localCart.forEach(user => {
-        if(user.username === this.state.currentUser.username && user.password === this.state.currentUser.pass){
-            const existingCartItem = user.cartItems.find(
-                cartItem => cartItem.id === item.id
-            )
-        
-            if(existingCartItem){
-               user.cartItems.map(cartItem => cartItem.id === item.id ? cartItem.quantity +=1 : cartItem)
-               localStorage.setItem("users" , JSON.stringify(localCart))
-            } else {
+    if(this.state.currentUser){
+      const localCart = JSON.parse(localStorage.getItem("users"))
+      localCart.forEach(user => {
+          if(user.username === this.state.currentUser.username && user.password === this.state.currentUser.pass){
+              const existingCartItem = user.cartItems.find(
+                  cartItem => cartItem.id === item.id
+              )
+          
+              if(existingCartItem){
+                 user.cartItems.map(cartItem => cartItem.id === item.id ? cartItem.quantity +=1 : cartItem)
+                 localStorage.setItem("users" , JSON.stringify(localCart))
+              } else {
                 user.cartItems.push({...item, quantity: 1})
-               localStorage.setItem("users" , JSON.stringify(localCart))
-            }
-        }
-    })
-    this.setState({})
+                localStorage.setItem("users" , JSON.stringify(localCart))
+              }
+          }
+      })
+      this.setState({})
+    } else {
+      this.props.history.push({
+        pathname: "/login",
+      });
+    }
 }
 
   handleCurrentUser = (userName,password) => {
@@ -131,5 +137,5 @@ removeEverything = () => {
   }
 }
 
-export default App;
+export default withRouter(App);
 

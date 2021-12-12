@@ -38,7 +38,7 @@ export default class NavBar extends Component {
 
         <div className="nav">
           <div className="navCenter">
-            <li className="navLogo">i C A P</li>
+          <li className="navLogo">i C A P</li>
           </div>
           <ul className={`${this.state.navBarActive ? "activeBurger" : ""} topList`}>
             <li>
@@ -48,15 +48,6 @@ export default class NavBar extends Component {
             </li>
             <li>
               <Link to="/shop">Shop</Link>
-            </li>
-            <li>
-              <a href="#featured-products-section">Featured Products</a>
-            </li>
-            <li>
-              <a href="#about-section">About</a>
-            </li>
-            <li>
-              <a href="#testimonials-section">Testimonials</a>
             </li>
             {this.props.currentUser ?  <div className="sign-out">
               <li><Link to="/profile">Profile</Link></li>

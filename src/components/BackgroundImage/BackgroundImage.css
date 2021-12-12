@@ -38,13 +38,12 @@
   width: 5%;
 }
 
-@media screen and (max-width: 381px) {
-  .backgroundImage {
-    padding: 0px 5rem !important;
-  }
-}
+
 @media (max-width: 561px) {
   .backgroundImage span {
     font-size: 4rem;
+  }
+  .backgroundImage {
+    padding: 0px 2rem !important;
   }
 }
