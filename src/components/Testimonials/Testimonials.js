@@ -15,7 +15,7 @@ function Testimonials() {
           <div className="carousel-item active">
             <img
               className="d-block w-50 pb-3"
-              src="./images/cap2.jpg"
+              src={process.env.PUBLIC_URL + '/images/cap3.jpeg'}
               alt="First slide"
             />
             <i className="fas fa-quote-left "></i>
@@ -29,7 +29,7 @@ function Testimonials() {
           <div className="carousel-item">
             <img
               className="d-block w-50 pb-3"
-              src="./images/cap1.jpg"
+              src={process.env.PUBLIC_URL + '/images/cap2.jpg'}
               alt="Second slide"
             />
             <i className="fas fa-quote-left "></i>
@@ -43,7 +43,7 @@ function Testimonials() {
           <div className="carousel-item">
             <img
               className="d-block w-50 pb-3"
-              src="./images/cap3.jpeg"
+              src={process.env.PUBLIC_URL + '/images/cap1.jpg'}
               alt="Third slide"
             />
             <i className="fas fa-quote-left "></i>

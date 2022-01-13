@@ -8,7 +8,7 @@ function BackgroundImage() {
     <div>
       <div
         className="backgroundImage"
-        style={{ backgroundImage: "url(./images/bg.jpg)" }}
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/images/bg.jpg'})` }}
       >
         <span> Stylish & Trendy Hats!</span>
         <p>Check out our collection now</p>
